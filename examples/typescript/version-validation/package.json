@@ -11,7 +11,7 @@
   "license": "MIT",
   "packageManager": "pnpm@10.12.3",
   "dependencies": {
-    "@ts-ffmpeg/fluent-ffmpeg": "^2.2.0"
+    "@ts-ffmpeg/fluent-ffmpeg": "2.2.1"
   },
   "devDependencies": {
     "vite-node": "^3.2.4"
