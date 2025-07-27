@@ -1,4 +1,10 @@
 *.md
 .git*
-test/
-examples/
+doc
+examples
+test
+tools
+Makefile
+fluent-ffmpeg-tests.ts
+node_modules
+.github
