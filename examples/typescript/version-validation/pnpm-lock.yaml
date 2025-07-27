@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ts-ffmpeg/fluent-ffmpeg':
-        specifier: 2.2.1
-        version: 2.2.1
+        specifier: 2.2.2
+        version: 2.2.2
     devDependencies:
       vite-node:
         specifier: ^3.2.4
@@ -274,8 +274,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@ts-ffmpeg/fluent-ffmpeg@2.2.1':
-    resolution: {integrity: sha512-EYTfwVg5KajIRMIoeMhaixuRc9e1Q61hW+del8eJXGchZy0J7vvyzczt756f9DuV/WeXn/gBOnoB6fWRZw2oGA==}
+  '@ts-ffmpeg/fluent-ffmpeg@2.2.2':
+    resolution: {integrity: sha512-O8VTX2oGSYv3Bi1M19mXd/kVfShYPgLvoY0bk0GLkrj+1PSVM1InyR/x8BVuuss7kVNZS52izAUWXfTtdzoICQ==}
     engines: {node: '>=18'}
 
   '@types/estree@1.0.8':
@@ -545,7 +545,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.45.3':
     optional: true
 
-  '@ts-ffmpeg/fluent-ffmpeg@2.2.1':
+  '@ts-ffmpeg/fluent-ffmpeg@2.2.2':
     dependencies:
       async: 0.2.10
       which: 1.3.1
