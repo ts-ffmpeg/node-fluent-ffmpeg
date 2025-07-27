@@ -1,6 +1,6 @@
 {
   "name": "@ts-ffmpeg/fluent-ffmpeg",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "A fluent API to FFMPEG (http://www.ffmpeg.org) with types from @types/fluent-ffmpeg (https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fluent-ffmpeg)",
   "keywords": [
     "ffmpeg"
