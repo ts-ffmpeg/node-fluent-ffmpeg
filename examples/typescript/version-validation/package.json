@@ -1,0 +1,19 @@
+{
+  "name": "version-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx vite-node index.ts"
+  },
+  "keywords": [ ],
+  "author": "Jonham <jonhamchen@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.3",
+  "dependencies": {
+    "@ts-ffmpeg/fluent-ffmpeg": "^2.2.0"
+  },
+  "devDependencies": {
+    "vite-node": "^3.2.4"
+  }
+}
