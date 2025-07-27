@@ -1,4 +1,4 @@
-# [Legacy project rescue WIP] Fluent FFmpeg-API with types for node.js
+# Fluent FFmpeg-API with types for node.js
 
 [![Coverage Status](https://coveralls.io/repos/github/fluent-ffmpeg/node-fluent-ffmpeg/badge.svg?branch=master)](https://coveralls.io/github/fluent-ffmpeg/node-fluent-ffmpeg?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_shield)
@@ -6,6 +6,77 @@
 ## What will be done with this legacy project
 I will merge types from https://www.npmjs.com/package/@types/fluent-ffmpeg into this repo, put types and code ready at one place. \
 And later I'm planing to fix [issues from previous repo](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/issues) and [merge PRs](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/pulls).
+
+
+## Installation
+
+Via npm:
+
+```sh
+# this lib starts from v2.2.0, which is the same code with `fluent-ffmpeg@2.1`. I just reduce the useless code in npm lib.
+$ npm install @ts-ffmpeg/fluent-ffmpeg
+```
+
+
+### Creating an FFmpeg command
+
+The fluent-ffmpeg module returns a constructor that you can use to instanciate FFmpeg commands.
+
+```ts
+// ts
+import ffmpeg from '@ts-ffmpeg/fluent-ffmpeg'
+const command = ffmpeg();
+```
+
+You may pass an input file name or readable stream, a configuration object, or both to the constructor.
+
+```js
+const command = ffmpeg('/path/to/file.avi');
+const command = ffmpeg(fs.createReadStream('/path/to/file.avi'));
+const command = ffmpeg({ option: "value", ... });
+const command = ffmpeg('/path/to/file.avi', { option: "value", ... });
+```
+
+The following options are available:
+* `source`: input file name or readable stream (ignored if an input file is passed to the constructor)
+* `timeout`: ffmpeg timeout in seconds (defaults to no timeout)
+* `preset` or `presets`: directory to load module presets from (defaults to the `lib/presets` directory in fluent-ffmpeg tree)
+* `niceness` or `priority`: ffmpeg niceness value, between -20 and 20; ignored on Windows platforms (defaults to 0)
+* `logger`: logger object with `debug()`, `info()`, `warn()` and `error()` methods (defaults to no logging)
+* `stdoutLines`: maximum number of lines from ffmpeg stdout/stderr to keep in memory (defaults to 100, use 0 for unlimited storage)
+
+
+### Specifying inputs
+
+You can add any number of inputs to an Ffmpeg command.  An input can be:
+* a file name (eg. `/path/to/file.avi`);
+* an image pattern (eg. `/path/to/frame%03d.png`);
+* a readable stream; only one input stream may be used for a command, but you can use both an input stream and one or several file names.
+
+```js
+// Note that all fluent-ffmpeg methods are chainable
+ffmpeg('/path/to/input1.avi')
+  .input('/path/to/input2.avi')
+  .input(fs.createReadStream('/path/to/input3.avi'));
+
+// Passing an input to the constructor is the same as calling .input()
+ffmpeg()
+  .input('/path/to/input1.avi')
+  .input('/path/to/input2.avi');
+
+// Most methods have several aliases, here you may use addInput or mergeAdd instead
+ffmpeg()
+  .addInput('/path/to/frame%02d.png')
+  .addInput('/path/to/soundtrack.mp3');
+
+ffmpeg()
+  .mergeAdd('/path/to/input1.avi')
+  .mergeAdd('/path/to/input2.avi');
+```
+
+### More
+This lib is currently written in js for code, and a standalone `index.d.ts` for typing. So you can easily import lib by require or import. For more examples, you can explore the doc below. They are all the same with the lib `fluent-ffmpeg`.
+
 
 ## Credits 
 ### Main contributors from [fluent-ffmpeg/node-fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg) project
@@ -108,14 +179,14 @@ Alternatively, you may set the ffmpeg, ffprobe and flvtool2/flvmeta binary paths
 The fluent-ffmpeg module returns a constructor that you can use to instanciate FFmpeg commands.
 
 ```js
-var FfmpegCommand = require('fluent-ffmpeg');
+var FfmpegCommand = require('@ts-ffmpeg/fluent-ffmpeg');
 var command = new FfmpegCommand();
 ```
 
 You can also use the constructor without the `new` operator.
 
 ```js
-var ffmpeg = require('fluent-ffmpeg');
+var ffmpeg = require('@ts-ffmpeg/fluent-ffmpeg');
 var command = ffmpeg();
 ```
 
@@ -1303,7 +1374,7 @@ fluent-ffmpeg enables you to query your installed ffmpeg version for supported f
 
 ```js
 
-var Ffmpeg = require('fluent-ffmpeg');
+var Ffmpeg = require('@ts-ffmpeg/fluent-ffmpeg');
 
 Ffmpeg.getAvailableFormats(function(err, formats) {
   console.log('Available formats:');
