@@ -1,7 +1,49 @@
-# (Legacy project) Fluent ffmpeg-API for node.js
+# [Legacy project rescue WIP] Fluent FFmpeg-API with types for node.js
 
 [![Coverage Status](https://coveralls.io/repos/github/fluent-ffmpeg/node-fluent-ffmpeg/badge.svg?branch=master)](https://coveralls.io/github/fluent-ffmpeg/node-fluent-ffmpeg?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_shield)
+
+## What will be done with this legacy project
+I will merge types from https://www.npmjs.com/package/@types/fluent-ffmpeg into this repo, put types and code ready at one place. \
+And later I'm planing to fix [issues from previous repo](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/issues) and [merge PRs](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/pulls).
+
+## Credits 
+### Main contributors from [fluent-ffmpeg/node-fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg) project
+
+* [enobrev](http://github.com/enobrev)
+* [njoyard](http://github.com/njoyard)
+* [sadikzzz](http://github.com/sadikzzz)
+* [smremde](http://github.com/smremde)
+* [spruce](http://github.com/spruce)
+* [tagedieb](http://github.com/tagedieb)
+* [tommadema](http://github.com/tommadema)
+* [Weltschmerz](http://github.com/Weltschmerz)
+
+[and more others](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/graphs/contributors)
+
+
+### TS types authors from [@types/fluent-ffmpeg](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fluent-ffmpeg)
+These definitions were written by KIM Jaesuck a.k.a. gim tcaesvk, DingWeizhe, Mounir Abid, Doyoung Ha, and Prasad Nayak.
+
+
+## License
+
+(The MIT License)
+
+Copyright (c) 2011 Stefan Schaermeli &lt;schaermu@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_large)
+
+
+---
+# Below are doc from legacy project
 
 ## Fluent-ffmpeg is now deprecated
 
