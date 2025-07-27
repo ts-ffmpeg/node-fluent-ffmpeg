@@ -1,10 +1,8 @@
 *.md
 .git*
-test/
-examples/
-
-# for types
-!**/*.d.ts
-!**/*.d.cts
-!**/*.d.mts
-!**/*.d.*.ts
+test/**/*
+examples/**/*
+fluent-ffmpeg-tests.ts
+Makefile
+node_modules
+.github
