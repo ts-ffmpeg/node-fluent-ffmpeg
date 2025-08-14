@@ -16,5 +16,3 @@ JSDOC_CONF = tools/jsdoc-conf.json
 
 doc:
 	$(JSDOC) --configure $(JSDOC_CONF)
-
-.PHONY: test test-colors publish doc
