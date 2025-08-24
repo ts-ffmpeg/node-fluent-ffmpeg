@@ -22,13 +22,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: yarn
+          cache: pnpm
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
       - name: Run tests
-        run: yarn test
+        run: pnpm test
       - name: Generate coverage report
-        run: yarn coverage
+        run: pnpm coverage
       - name: Store coveralls coverage
         uses: coverallsapp/github-action@v2
         with:
