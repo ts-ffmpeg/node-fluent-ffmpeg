@@ -21,6 +21,7 @@ declare namespace Ffmpeg {
         timeout?: number | undefined;
         source?: string | stream.Readable | undefined;
         cwd?: string | undefined;
+        signal?: AbortSignal | undefined; // an AbortSignal to cancel the command
     }
 
     interface FilterSpecification {
