@@ -19,6 +19,7 @@ declare namespace Ffmpeg {
         preset?: string | undefined;
         stdoutLines?: number | undefined;
         timeout?: number | undefined;
+        terminateTimeout?: number | undefined;
         source?: string | stream.Readable | undefined;
         cwd?: string | undefined;
     }
