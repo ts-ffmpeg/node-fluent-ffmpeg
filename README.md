@@ -1,7 +1,6 @@
 # Fluent FFmpeg-API with types for node.js
 
 [![Coverage Status](https://coveralls.io/repos/github/fluent-ffmpeg/node-fluent-ffmpeg/badge.svg?branch=master)](https://coveralls.io/github/fluent-ffmpeg/node-fluent-ffmpeg?branch=master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_shield)
 
 ## What will be done with this legacy project
 I will merge types from https://www.npmjs.com/package/@types/fluent-ffmpeg into this repo, put types and code ready at one place. \
@@ -89,19 +88,27 @@ This lib is currently written in js for code, and a standalone `index.d.ts` for 
 * [tagedieb](http://github.com/tagedieb)
 * [tommadema](http://github.com/tommadema)
 * [Weltschmerz](http://github.com/Weltschmerz)
+* [Jonham Chen](http://github.com/jonham)
 
 [and more others](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/graphs/contributors)
 
 
 ### TS types authors from [@types/fluent-ffmpeg](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fluent-ffmpeg)
-These definitions were written by KIM Jaesuck a.k.a. gim tcaesvk, DingWeizhe, Mounir Abid, Doyoung Ha, and Prasad Nayak.
+These definitions were written by
+- [KIM Jaesuck a.k.a. gim tcaesvk](http://github.com/tcaesvk)
+- [DingWeizhe](http://github.com/DingWeizhe)
+- [Mounir Abid](http://github.com/mabidina)
+- [Doyoung Ha](http://github.com/hados99)
+- [Prasad Nayak](http://github.com/buzzertech)
+- [Jonham Chen](http://github.com/jonham)
 
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2011 Stefan Schaermeli &lt;schaermu@gmail.com&gt;
+Copyright (c) 2011-2024 Stefan Schaermeli &lt;schaermu@gmail.com&gt;  
+Copyright (c) 2025 Jonham Chen &lt;jonhamchen@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
