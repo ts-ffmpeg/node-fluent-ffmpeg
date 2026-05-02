@@ -1,5 +1,6 @@
 *.project
 node_modules
+.pnpm-store
 .nyc_output
 *.swp
 .idea
