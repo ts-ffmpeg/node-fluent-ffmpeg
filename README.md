@@ -5,8 +5,9 @@
 [![npm version](https://img.shields.io/npm/v/%40ts-ffmpeg%2Ffluent-ffmpeg)](https://www.npmjs.com/package/@ts-ffmpeg/fluent-ffmpeg)
 [![npm downloads](https://img.shields.io/npm/dt/%40ts-ffmpeg%2Ffluent-ffmpeg)](https://www.npmjs.com/package/@ts-ffmpeg/fluent-ffmpeg)
 [![Coverage Status](https://coveralls.io/repos/github/ts-ffmpeg/node-fluent-ffmpeg/badge.svg?branch=activationBytes)](https://coveralls.io/github/ts-ffmpeg/node-fluent-ffmpeg?branch=activationBytes)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fts-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=shield&issueType=security)](https://app.fossa.com/projects/git%2Bgithub.com%2Fts-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_shield&issueType=security)
 
-## What will be done with this legacy project
+## Current migration plan of `@ts-ffmpeg/flucnet-ffmpeg`
 I will merge types from [@types/fluent-ffmpeg](https://www.npmjs.com/package/@types/fluent-ffmpeg) into this repo, put types and code ready at one place. \
 And later I'm planing to fix [issues from previous repo](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/issues) and [merge PRs](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/pulls).
 
@@ -108,6 +109,7 @@ These definitions were written by
 
 
 ## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fts-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fts-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_shield&issueType=license)
 
 (The MIT License)
 
@@ -119,6 +121,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffluent-ffmpeg%2Fnode-fluent-ffmpeg?ref=badge_large)
