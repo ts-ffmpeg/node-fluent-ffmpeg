@@ -6,14 +6,14 @@
   "scripts": {
     "test": "npx vite-node index.ts"
   },
-  "keywords": [ ],
+  "keywords": [],
   "author": "Jonham <jonhamchen@gmail.com>",
   "license": "MIT",
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "pnpm@10.30.2",
   "dependencies": {
-    "@ts-ffmpeg/fluent-ffmpeg": "2.2.2"
+    "@ts-ffmpeg/fluent-ffmpeg": "2.2.6"
   },
   "devDependencies": {
-    "vite-node": "^3.2.4"
+    "vite-node": "6.0.0"
   }
 }
