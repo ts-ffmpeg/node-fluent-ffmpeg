@@ -3,9 +3,27 @@
   "version": "2.2.6",
   "description": "A fluent API to FFMPEG (http://www.ffmpeg.org) with types from @types/fluent-ffmpeg (https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fluent-ffmpeg)",
   "keywords": [
-    "ffmpeg"
+    "ffmpeg",
+    "@ts-ffmpeg/fluent-ffmpeg",
+    "ts-ffmpeg",
+    "fluent-ffmpeg"
   ],
   "author": "Stefan Schaermeli <schaermu@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "mail": "jonhamchen@gmail.com",
+    "url": "https://github.com/ts-ffmpeg/node-fluent-ffmpeg/issues"
+  },
+  "repository": "git://github.com/ts-ffmpeg/node-fluent-ffmpeg.git",
+  "main": "index",
+  "packageManager": "pnpm@10.30.2",
+  "scripts": {
+    "test": "NODE_ENV=test nyc mocha --require should --reporter spec",
+    "coverage": "nyc report --reporter=lcov"
+  },
   "contributors": [
     {
       "name": "Felix Fichte",
@@ -36,15 +54,10 @@
       "githubUsername": "jonham"
     }
   ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "dependencies": {
+    "async": "^0.2.9",
+    "which": "^1.1.1"
   },
-  "bugs": {
-    "mail": "jonhamchen@gmail.com",
-    "url": "https://github.com/ts-ffmpeg/node-fluent-ffmpeg/issues"
-  },
-  "repository": "git://github.com/ts-ffmpeg/node-fluent-ffmpeg.git",
   "devDependencies": {
     "@types/node": "^24.1.0",
     "jsdoc": "^4.0.0",
@@ -52,16 +65,7 @@
     "nyc": "^15.1.0",
     "should": "^13.0.0"
   },
-  "dependencies": {
-    "async": "^0.2.9",
-    "which": "^1.1.1"
-  },
   "engines": {
     "node": ">=18"
-  },
-  "main": "index",
-  "scripts": {
-    "test": "NODE_ENV=test nyc mocha --require should --reporter spec",
-    "coverage": "nyc report --reporter=lcov"
   }
 }
