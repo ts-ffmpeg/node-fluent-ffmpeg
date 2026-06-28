@@ -1,0 +1,3 @@
+# Documentation drafts are ignored by default.
+# Use `git add -f .docs/<file>.md` to commit a reviewed document explicitly.
+*.md
