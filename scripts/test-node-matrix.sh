@@ -14,7 +14,8 @@ PNPM_11_VERSION="11.9.0"
 NODE_MATRIX_VERSIONS="${NODE_MATRIX_VERSIONS:-18 20 22 24}"
 NODE_MATRIX_USE_DOCKER="${NODE_MATRIX_USE_DOCKER:-0}"
 NODE_MATRIX_CACHE_DIR="${NODE_MATRIX_CACHE_DIR:-${REPOSITORY_ROOT}/.cache/node-matrix}"
-NODE_MATRIX_TEST_COMMAND="${NODE_MATRIX_TEST_COMMAND:-npm run build --if-present && nyc mocha --require should --reporter spec && mocha --require should --reporter spec --timeout 30000 e2e/features.test.js}"
+DEFAULT_NODE_MATRIX_TEST_COMMAND='set +e; echo "--- build ---"; npm run build --if-present; build_status=$?; echo "--- legacy tests ---"; nyc mocha --require should --reporter spec; legacy_status=$?; echo "--- functional E2E ---"; mocha --require should --reporter spec --timeout 30000 e2e/features.test.js; functional_status=$?; echo "--- package consumer E2E ---"; mocha --require should --reporter spec --timeout 120000 e2e/package-consumer.test.js; package_status=$?; echo "phase status: build=${build_status} legacy=${legacy_status} functional=${functional_status} package=${package_status}"; exit $((build_status || legacy_status || functional_status || package_status))'
+NODE_MATRIX_TEST_COMMAND="${NODE_MATRIX_TEST_COMMAND:-${DEFAULT_NODE_MATRIX_TEST_COMMAND}}"
 NODE_MATRIX_INSTALL_ONLY="${NODE_MATRIX_INSTALL_ONLY:-0}"
 NODE_MATRIX_DOCKER_PLATFORM="${NODE_MATRIX_DOCKER_PLATFORM:-}"
 NODE_MATRIX_FFMPEG_BIN="${NODE_MATRIX_FFMPEG_BIN:-}"
@@ -144,7 +145,7 @@ run_docker_matrix() {
 
     log "Installing dependencies with Node.js ${version} and pnpm ${pnpm_version} in Docker"
     docker run --rm \
-      "${platform_args[@]}" \
+      ${platform_args[@]+"${platform_args[@]}"} \
       --volume "${REPOSITORY_ROOT}:/workspace" \
       --volume "${docker_cache_dir}:/cache" \
       --workdir /workspace \
@@ -158,7 +159,7 @@ run_docker_matrix() {
 
     log "Testing with Node.js ${version} and FFmpeg in Docker"
     docker run --rm \
-      "${platform_args[@]}" \
+      ${platform_args[@]+"${platform_args[@]}"} \
       --volume "${REPOSITORY_ROOT}:/workspace" \
       --volume "${docker_cache_dir}:/cache" \
       --workdir /workspace \
