@@ -62,6 +62,31 @@ docker_platform_args() {
   fi
 }
 
+run_docker_with_workspace() {
+  local container_id
+  local status=0
+
+  container_id="$(docker create "$@")"
+
+  # Do not bind-mount the repository here. Remote Docker daemons and some
+  # Colima configurations cannot resolve paths from the client filesystem.
+  # Streaming the working tree through the Docker API works in both cases.
+  if ! COPYFILE_DISABLE=1 tar \
+    --no-xattrs \
+    --exclude='./.git' \
+    --exclude='./.cache' \
+    --exclude='./node_modules' \
+    -C "${REPOSITORY_ROOT}" \
+    -cf - . | docker cp - "${container_id}:/workspace"; then
+    docker rm --force "${container_id}" >/dev/null
+    return 1
+  fi
+
+  docker start --attach "${container_id}" || status=$?
+  docker rm --force "${container_id}" >/dev/null
+  return "${status}"
+}
+
 run_local_matrix() {
   export NVM_DIR="${NVM_DIR:-${HOME}/.nvm}"
 
@@ -144,9 +169,8 @@ run_docker_matrix() {
     local store_dir="/cache/node-v${version}/pnpm-store-v${pnpm_version}"
 
     log "Installing dependencies with Node.js ${version} and pnpm ${pnpm_version} in Docker"
-    docker run --rm \
+    run_docker_with_workspace \
       ${platform_args[@]+"${platform_args[@]}"} \
-      --volume "${REPOSITORY_ROOT}:/workspace" \
       --volume "${docker_cache_dir}:/cache" \
       --workdir /workspace \
       --env CI=true \
@@ -158,13 +182,13 @@ run_docker_matrix() {
     fi
 
     log "Testing with Node.js ${version} and FFmpeg in Docker"
-    docker run --rm \
+    run_docker_with_workspace \
       ${platform_args[@]+"${platform_args[@]}"} \
-      --volume "${REPOSITORY_ROOT}:/workspace" \
       --volume "${docker_cache_dir}:/cache" \
       --workdir /workspace \
       --env NODE_ENV=test \
       --env NODE_PATH="${modules_dir}" \
+      --env FLVTOOL2_PRESENT=no \
       "node:${version}-bookworm" \
       bash -c "apt-get update >/dev/null && apt-get install -y --no-install-recommends ffmpeg >/dev/null && export PATH=${modules_dir}/.bin:\${PATH} && ${NODE_MATRIX_TEST_COMMAND}"
   done
