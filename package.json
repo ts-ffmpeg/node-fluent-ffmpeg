@@ -19,9 +19,13 @@
   },
   "repository": "git://github.com/ts-ffmpeg/node-fluent-ffmpeg.git",
   "main": "index",
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "test": "NODE_ENV=test nyc mocha --require should --reporter spec",
+    "test:e2e": "pnpm run test:e2e:functional && pnpm run test:e2e:package",
+    "test:e2e:functional": "NODE_ENV=test mocha --require should --reporter spec --timeout 30000 e2e/features.test.js",
+    "test:e2e:package": "NODE_ENV=test mocha --require should --reporter spec --timeout 120000 e2e/package-consumer.test.js",
+    "test:matrix": "bash scripts/test-node-matrix.sh",
     "coverage": "nyc report --reporter=lcov"
   },
   "contributors": [
