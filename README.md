@@ -20,6 +20,10 @@ Via npm:
 $ npm install @ts-ffmpeg/fluent-ffmpeg
 ```
 
+## Strategy docs
+
+- [ts-ffmpeg Adoption and SEO Playbook](./TS_FFMPEG_ADOPTION_SEO_PLAYBOOK.md)
+
 
 ### Creating an FFmpeg command
 
